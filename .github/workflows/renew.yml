@@ -84,7 +84,7 @@ jobs:
           
           if [ -f config.json ]; then
             echo "✅ 代理配置已生成:"
-            cat config.json
+            # cat config.json
             # 使用 nohup 启动 (与 ICMP9 项目一致)
             nohup ./sing-box run -c config.json > singbox.log 2>&1 &
             sleep 5
@@ -104,13 +104,13 @@ jobs:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: node renew.js
 
-      - name: Upload Screenshots
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: screenshots-${{ matrix.account_index }}
-          path: "*.png"
-          retention-days: 5
+      # - name: Upload Screenshots
+      #   if: always()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: screenshots-${{ matrix.account_index }}
+      #     path: "*.png"
+      #     retention-days: 5
 
       - name: Persist status.json
         if: always()
