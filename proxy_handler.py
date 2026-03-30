@@ -140,6 +140,6 @@ def main():
     port = outbound.get("server_port", "N/A")
     print(f"sing-box config.json generated.")
     print(f"  Inbound: http://{LISTEN_HOST}:{LISTEN_PORT}")
-    print(f"  Outbound: {outbound['type']} -> {server}:{port}")
+    # print(f"  Outbound: {outbound['type']} -> {server}:{port}")
 
 if __name__ == "__main__": main()
